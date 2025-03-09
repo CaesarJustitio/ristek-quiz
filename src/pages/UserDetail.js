@@ -17,7 +17,7 @@ const UserDetail = () => {
 
   return (
     <div className="user-detail-page">
-      <h2 className="user-detail-page">User Detail</h2>
+      <h2 className="user-detail-page">USER DETAIL</h2>
       <div className="user-detail-container">
         <div className="user-detail-card">
           <h3 className="user-detail-name">
@@ -25,7 +25,7 @@ const UserDetail = () => {
           </h3>
           <p className="user-detail-email">{user.email}</p>
           <Link to="/users">
-            <button className="user-detail-button">START</button>
+            <button className="user-detail-button">BACK</button>
           </Link>
         </div>
       </div>

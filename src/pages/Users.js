@@ -18,7 +18,7 @@ const Users = () => {
 
   return (
     <div className="user-page">
-      <h2 className="user-title-container">Users List</h2>
+      <h2 className="user-title-container">USER LIST</h2>
       <div className="user-container">
         {users.map((user) => (
           <div key={user.id} className="user-card">

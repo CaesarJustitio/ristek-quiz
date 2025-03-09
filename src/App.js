@@ -5,6 +5,8 @@ import Users from "./pages/Users";
 import UserDetail from "./pages/UserDetail";
 import Tryouts from "./pages/Tryouts";
 import TryoutDetail from "./pages/TryoutDetail";
+import CreateTryout from "./pages/CreateTryout";
+import UpdateTryout from "./pages/UpdateTryout";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -20,6 +22,8 @@ const App = () => {
             <Route path="/users/:id" element={<UserDetail />} />
             <Route path="/tryouts" element={<Tryouts />} />
             <Route path="/tryouts/:id" element={<TryoutDetail />} />
+            <Route path="/tryouts/create-tryout" element={<CreateTryout />} />
+            <Route path="/tryouts/update/:id" element={<UpdateTryout />} />
           </Routes>
         </main>
         <Footer />

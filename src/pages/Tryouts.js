@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Tryouts.css";
 
 const Tryout = () => {
-  const [tryouts, setTryOut] = useState([]);
+  const [tryouts, setTryouts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:2000/tryouts")
       .then((res) => res.json())
-      .then((data) => setTryOut(data))
-      .catch((error) => console.error("Error fetching tryout:", error));
+      .then((data) => setTryouts(data))
+      .catch((error) => console.error("Error fetching tryouts:", error));
   }, []);
 
   return (
     <div className="tryout-page">
-      <h2 className="tryout-title-container">Tryout List</h2>
+      <h2 className="tryout-title-container">TRYOUT LIST</h2>
       <div className="tryout-container">
         {tryouts.map((tryout) => (
           <div key={tryout.id} className="tryout-card">
@@ -25,6 +26,12 @@ const Tryout = () => {
           </div>
         ))}
       </div>
+      <button
+        className="create-tryout-button"
+        onClick={() => navigate("/tryouts/create-tryout")}
+      >
+        Create New Tryout
+      </button>
     </div>
   );
 };
