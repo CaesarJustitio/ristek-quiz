@@ -1,0 +1,41 @@
+nav {
+  background-color: #f8d879;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #4c39b5;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #1e0e7b;
+}
+
+.App-logo {
+  height: 40px;
+  width: auto;
+  padding-left: 15px;
+}
