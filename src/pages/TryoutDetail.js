@@ -2,19 +2,30 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "../styles/TryoutDetail.css";
 
+
 const TryOutDetail = () => {
-  const { id } = useParams();
-  const [tryout, setTryout] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch(`http://localhost:2000/tryouts/${id}`)
-      .then((res) => res.json())
-      .then((data) => setTryout(data))
-      .catch((error) => console.error("Error fetching tryout:", error));
-  }, [id]);
-
-  if (!tryout) return <p>Loading...</p>;
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [tryout, setTryout] = useState(null);
+  
+    useEffect(() => {
+      const fetchTryoutData = async () => {
+        try {
+          const [tryoutRes] = await Promise.all([
+            fetch(`http://localhost:2000/tryouts/${id}`).then((res) => res.json()),
+            fetch(`http://localhost:2000/tryouts/${id}/questions`).then((res) => res.json()),
+          ]);
+  
+          setTryout(tryoutRes);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      fetchTryoutData();
+    }, [id]);
+  
+    if (!tryout) return <p>Loading...</p>;
 
   const formatDate = (dateString) => {
     const options = { day: "2-digit", month: "short", year: "numeric" };
@@ -62,18 +73,18 @@ const TryOutDetail = () => {
           <div className="tryout-detail-buttons">
             <Link to={`/tryouts/delete/${tryout.id}`}>
               <button
-                className="tryout-detail-button delete"
+                className="delete-tryout-button"
                 onClick={handleDelete}
               >
                 DELETE
               </button>
             </Link>
             <Link to={`/tryouts/update/${tryout.id}`}>
-              <button className="tryout-detail-button update">UPDATE</button>
+              <button className="update-tryout-button">UPDATE</button>
             </Link>
 
-            <Link to="/tryouts">
-              <button className="tryout-detail-button start">START</button>
+            <Link to={`/tryouts/${tryout.id}/questions`}>
+              <button className="view-tryout-button">VIEW</button>
             </Link>
           </div>
         </div>

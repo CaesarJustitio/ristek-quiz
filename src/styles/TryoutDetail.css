@@ -63,7 +63,7 @@
   margin-top: 20px;
 }
 
-.tryout-detail-button {
+.delete-tryout-button, .update-tryout-button, .view-tryout-button {
   background-color: #4c39b5;
   color: #ffffff;
   border: none;
@@ -78,12 +78,17 @@
   text-align: center;
 }
 
-.tryout-detail-button.start:hover {
-  background-color: #5cb338;
-}
-.tryout-detail-button.update:hover {
-  background-color: #ffc145;
-}
-.tryout-detail-button.delete:hover {
+.delete-tryout-button:hover {
   background-color: #fb4141;
+  color: #ffffff;
+} 
+
+.update-tryout-button:hover {
+  background-color: #ffc145;
+  color: #ffffff;
+} 
+
+.view-tryout-button:hover {
+  background-color: #5cb338;
+  color: #ffffff;
 }

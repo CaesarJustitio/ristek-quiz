@@ -7,8 +7,11 @@ SUPABASE
 Completed Levels:
 
 - Level 1 was completed on March 10, 2025, at 02:00
+- Level 2 was completed on March 10, 2025, at 05:00
+- Level 3 was completed on March 10, 2025, at 14:37
 
 Checklist:
+
 Level 1 ✅
 
 - Tryout List
@@ -16,13 +19,13 @@ Level 1 ✅
 - Navigation Bar
 - Footer
 
-Level 2
+Level 2 ✅
 
 - Create Tryout
 - Update Tryout
 - Delete Tryout
 
-Level 3
+Level 3 ✅
 
 - Fitur Search Tryout (Filtering)
 - View Questions
